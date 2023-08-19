@@ -1,1 +1,4 @@
 iso/**/*
+bochslog.txt
+com1.out
+*.o
