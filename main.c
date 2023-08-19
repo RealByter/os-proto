@@ -1,5 +1,6 @@
 #include "frame_buffer.h"
 #include "serial_port.h"
+#include "gdt.h"
 
 /* The I/O ports */
 #define FB_COMMAND_PORT         0x3D4
@@ -14,6 +15,7 @@
 
 int main() 
 {
+  init_gdt();
   serial_configure(SERIAL_COM1_BASE, Baud_57600);
   serial_write(SERIAL_COM1_BASE, "something", 9);
   char* buf = "hello";
