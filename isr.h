@@ -4,7 +4,18 @@
 #pragma once
 #include "types.h"
 
-typedef struct cpu_state {
+#define PIC1_PORT_A 0x20
+#define PIC2_PORT_A 0xA0
+
+/* The PIC interrupts have been remapped */
+#define PIC1_START_INTERRUPT 0x20
+#define PIC2_START_INTERRUPT 0x28
+#define PIC2_END_INTERRUPT PIC2_START_INTERRUPT + 7
+
+#define PIC_ACK 0x20
+
+typedef struct cpu_state
+{
   u32int edi;
   u32int esi;
   u32int ebp;
@@ -15,7 +26,8 @@ typedef struct cpu_state {
   u32int eax;
 } cpu_state_t;
 
-typedef struct stack_state {
+typedef struct stack_state
+{
   u32int int_no;
   u32int err_code;
   u32int eip;
@@ -25,7 +37,8 @@ typedef struct stack_state {
   u32int ss;
 } stack_state_t;
 
-typedef struct registers {
+typedef struct registers
+{
   /* Data segment selector */
   u32int ds;
   /* Pushed by pusha */
@@ -39,8 +52,7 @@ typedef struct registers {
 typedef void (*isr_t)(registers_t);
 
 void register_interrupt_handler(u8int n, isr_t handler);
-
-/* Function to initialize IDT */
-void init_idt();
+void pic_acknowledge(unsigned int interrupt);
+void interrupt_handler(registers_t regs);
 
 #endif /* INCLUDE_ISR_H */
