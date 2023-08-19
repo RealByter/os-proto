@@ -31,6 +31,7 @@ int main()
   {
     if (inb(0x64) & 0x01)
     {
+      // outb(0x64, 0xc0); makes the keyboard instant but with warnings
       unsigned char scan_code = keyboard_read_scan_code();
       char ascii_char = keyboard_scan_code_to_ascii(scan_code);
       if (ascii_char)
