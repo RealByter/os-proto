@@ -19,7 +19,9 @@
 
 void outb(unsigned short port, unsigned char data);
 void fb_move_cursor(unsigned short pos);
+void clear_screen();
 void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg);
-int fb_write(char *buf, unsigned int len);
+void fb_write(char *buf, unsigned int len);
+void fb_write_char(char character);
 
 #endif 

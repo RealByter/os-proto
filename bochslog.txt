@@ -44,45 +44,45 @@
 00000000000i[USBCTL] Pluggable USB devices
 00000000000i[USBCTL]   hub disk cdrom floppy mouse tablet keypad keyboard
 00000000000i[USBCTL]   printer
-00000000000i[MEM0  ] allocated memory at 0x7f5a02152010. after alignment, vector=0x7f5a02153000
+00000000000i[MEM0  ] allocated memory at 0x7f37d1218010. after alignment, vector=0x7f37d1219000
 00000000000i[MEM0  ] 32.00MB
 00000000000i[MEM0  ] mem block size = 0x00020000, blocks=256
 00000000000i[MEM0  ] rom at 0xffff0000/65536 ('/usr/share/bochs/BIOS-bochs-legacy')
 00000000000i[CPU0  ] WARNING: 3DNow! is not implemented yet !
 00000000000i[DEV   ] will paste characters every 100 iodev timer ticks
-00000000000i[      ] lt_dlhandle is 0x562d4b9a5de0
+00000000000i[      ] lt_dlhandle is 0x5626cb57bde0
 00000000000i[PLUGIN] loaded plugin libbx_soundalsa.so
 00000000000i[WAVOUT] ALSA: opened default PCM output device
 00000000000i[WAVOUT] changed sample rate to 44101
-00000000000i[      ] lt_dlhandle is 0x562d4b97b440
+00000000000i[      ] lt_dlhandle is 0x5626cb551440
 00000000000i[PLUGIN] loaded plugin libbx_pci.so
-00000000000i[      ] lt_dlhandle is 0x562d4c127ec0
+00000000000i[      ] lt_dlhandle is 0x5626cbcfdec0
 00000000000i[PLUGIN] loaded plugin libbx_pci2isa.so
-00000000000i[      ] lt_dlhandle is 0x562d4c128930
+00000000000i[      ] lt_dlhandle is 0x5626cbcfe930
 00000000000i[PLUGIN] loaded plugin libbx_usb_uhci.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12abd0
+00000000000i[      ] lt_dlhandle is 0x5626cbd00bd0
 00000000000i[PLUGIN] loaded plugin libbx_acpi.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12b400
+00000000000i[      ] lt_dlhandle is 0x5626cbd01400
 00000000000i[PLUGIN] loaded plugin libbx_hpet.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12c280
+00000000000i[      ] lt_dlhandle is 0x5626cbd02280
 00000000000i[PLUGIN] loaded plugin libbx_cmos.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12ca90
+00000000000i[      ] lt_dlhandle is 0x5626cbd02a90
 00000000000i[PLUGIN] loaded plugin libbx_dma.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12d400
+00000000000i[      ] lt_dlhandle is 0x5626cbd03400
 00000000000i[PLUGIN] loaded plugin libbx_pic.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12dbc0
+00000000000i[      ] lt_dlhandle is 0x5626cbd03bc0
 00000000000i[PLUGIN] loaded plugin libbx_pit.so
-00000000000i[      ] lt_dlhandle is 0x562d4c12e5e0
+00000000000i[      ] lt_dlhandle is 0x5626cbd045e0
 00000000000i[PLUGIN] loaded plugin libbx_vga.so
-00000000000i[      ] lt_dlhandle is 0x562d4c14fc20
+00000000000i[      ] lt_dlhandle is 0x5626cbd25c20
 00000000000i[PLUGIN] loaded plugin libbx_floppy.so
-00000000000i[      ] lt_dlhandle is 0x562d4c1507d0
+00000000000i[      ] lt_dlhandle is 0x5626cbd267d0
 00000000000i[PLUGIN] loaded plugin libbx_ioapic.so
-00000000000i[      ] lt_dlhandle is 0x562d4c150fe0
+00000000000i[      ] lt_dlhandle is 0x5626cbd26fe0
 00000000000i[PLUGIN] loaded plugin libbx_keyboard.so
-00000000000i[      ] lt_dlhandle is 0x562d4c1518e0
+00000000000i[      ] lt_dlhandle is 0x5626cbd278e0
 00000000000i[PLUGIN] loaded plugin libbx_harddrv.so
-00000000000i[      ] lt_dlhandle is 0x562d4c154ba0
+00000000000i[      ] lt_dlhandle is 0x5626cbd2aba0
 00000000000i[PLUGIN] loaded plugin libbx_pci_ide.so
 00000000000i[PLUGIN] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV   ] i440FX PMC present at device 0, function 0
@@ -90,7 +90,7 @@
 00000000000i[DEV   ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[PLUGIN] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS  ] Using local time for initial clock
-00000000000i[CMOS  ] Setting initial clock to: Sat Aug 19 21:21:51 2023 (time0=1692469311)
+00000000000i[CMOS  ] Setting initial clock to: Mon Aug 21 11:24:18 2023 (time0=1692606258)
 00000000000i[PLUGIN] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA   ] channel 4 used by cascade
 00000000000i[PLUGIN] init_dev of 'pic' plugin device by virtual method
@@ -122,7 +122,7 @@
 00000000000i[CD1   ] load cdrom with path='os.iso'
 00000000000i[CD1   ] Opening image file as a cd.
 00000000000i[HD    ] Media present in CD-ROM drive
-00000000000i[HD    ] Capacity is 2482 sectors (4.85 MB)
+00000000000i[HD    ] Capacity is 2487 sectors (4.86 MB)
 00000000000i[PLUGIN] init_dev of 'pci_ide' plugin device by virtual method
 00000000000i[DEV   ] PIIX3 PCI IDE controller present at device 1, function 1
 00000000000i[PLUGIN] init_dev of 'gameport' plugin device by virtual method
@@ -247,313 +247,27 @@
 00000443015i[BXVGA ] VBE known Display Interface b0c0
 00000443047i[BXVGA ] VBE known Display Interface b0c5
 00000445690i[VBIOS ] VBE Bios $Id: vbe.c 292 2021-06-03 12:24:22Z vruppert $
-00004097975i[BIOS  ] IDE time out
-00373418054i[BIOS  ] Booting from 07c0:0000
-00382598902e[WAVOUT] ALSA: underrun occurred
-00432290335i[SER   ] com1: FIFO enabled
-00445423025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00445424025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00448917032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00448918032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00482561027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00482562027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00508983027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00508984027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00508984281p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00508985028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00526495027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00526496027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00544054030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00544055030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00544581029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00544582029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00545126024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00545127024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00545621024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00545622024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00546103022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00546104022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00546626028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00546627028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00546945028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00546946028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00547317026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00547318026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00547802027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00547803027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00548282023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00548283023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00548699022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00548700022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00549077026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00549078026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00549544031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00549545031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00550006031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00550007031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00550631029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00550632029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00551032023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00551033023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00551634031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00551635031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00552000023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00552001023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00552510027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00552511027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00552978022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00552979022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00553435028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00553436028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00553987030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00553988030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00554433025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00554434025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00554831027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00554832027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00555247025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00555248025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00555747030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00555748030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00556260026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00556261026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00556811027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00556812027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00557329028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00557330028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00557599023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00557600023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00557894032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00557895032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00558263027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00558264027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00558618030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00558619030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00558980029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00558981029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559433031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559434031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559834025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559835025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559835279p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559836026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559837028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559838028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559839030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00559840030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00560064024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00560065024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00560573027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00560574027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00561096022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00561097022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00561595026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00561596026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00562058027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00562059027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00562426032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00562427032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00562988022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00562989022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563477027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563478027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563804024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563805024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563806026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563807026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563808028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00563809028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564001023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564002023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564003025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564004025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564182028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564183028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564722029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00564723029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00565329031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00565330031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00565711028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00565712028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00566193026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00566194026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00566610025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00566611025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00567128026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00567129026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00567585032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00567586032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00567980031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00567981031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00568487032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00568488032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00568911027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00568912027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00569437025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00569438025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00569921025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00569922025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00570427025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00570428025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00582405024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00582406024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00598491028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00598492028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00611302024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00611303024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00638200027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00638201027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00651093028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00651094028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00691556022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00691557022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00693418025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00693419025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00696172029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00696173029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00698220031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00698221031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00704743031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00704744031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00709497022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00709498022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00709912030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00709913030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00713941022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00713942022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00716676029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00716677029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00720150027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00720151027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00738775029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00738776029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00741985027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00741986027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00750939027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00750940027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00754501025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00754502025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00760389028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00760390028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00767160023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00767161023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00782167026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00782168026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00784588027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00784589027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00801020025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00801021025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00805935023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00805936023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00811274027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00811275027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00815295022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00815296022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00816283031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00816284031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00825131024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00825132024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00831066030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00831067030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00834104032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00834105032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00838891023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00838892023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00845090029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00845091029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00847503022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00847504022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00855304024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00855305024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00857570024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00857571024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00860206031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00860207031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00860705024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00860706024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00867216023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00867217023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00870109023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00870110023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00871030031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00871031031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00873150028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00873151028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00905321024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00905322024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00912455030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00912456030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00916557029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00916558029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00920800026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00920801026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00922085024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00922086024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00925499028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00925500028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00927755029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00927756029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00935084032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00935085032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00939759032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00939760032p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00945503023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00945504023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00948621028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00948622028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00951247025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00951248025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00959091026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00959092026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00963487022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00963488022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00965074025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00965075025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00977067028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00977068030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00982278027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00982279029p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00987199022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-00987200024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01001742025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01001743027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01008911024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01008912026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01017928023p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01017929025p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01024355028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01024356030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01031668028p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01031669030p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01081406026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01081407026p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01088425027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01088426027p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01095097022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01095098022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01101215024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01101216024p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01107932031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01107933031p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01114193022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01114194022p[KBD   ] >>PANIC<< kbd: OUTB set and command 0xc0 encountered
-01347437000p[SDL2  ] >>PANIC<< POWER button turned off.
-01347437000i[CPU0  ] CPU is in protected mode (active)
-01347437000i[CPU0  ] CS.mode = 32 bit
-01347437000i[CPU0  ] SS.mode = 32 bit
-01347437000i[CPU0  ] EFER   = 0x00000000
-01347437000i[CPU0  ] | EAX=00000000  EBX=00102004  ECX=00000000  EDX=00100064
-01347437000i[CPU0  ] | ESP=00103fbc  EBP=00103fe8  ESI=00000000  EDI=00000000
-01347437000i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf AF pf cf
-01347437000i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
-01347437000i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
-01347437000i[CPU0  ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01347437000i[CPU0  ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01347437000i[CPU0  ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01347437000i[CPU0  ] |  FS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01347437000i[CPU0  ] |  GS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-01347437000i[CPU0  ] | EIP=00100130 (00100130)
-01347437000i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
-01347437000i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
-01347437000i[CMOS  ] Last time is 1692470658 (Sat Aug 19 21:44:18 2023)
-01347437000i[SIM   ] quit_sim called with exit code 1
+00004097998i[BIOS  ] IDE time out
+00594824299i[BIOS  ] Booting from 07c0:0000
+00604224466e[WAVOUT] ALSA: underrun occurred
+00658547115i[SER   ] com1: FIFO enabled
+00904151000p[SDL2  ] >>PANIC<< POWER button turned off.
+00904151000i[CPU0  ] CPU is in protected mode (active)
+00904151000i[CPU0  ] CS.mode = 32 bit
+00904151000i[CPU0  ] SS.mode = 32 bit
+00904151000i[CPU0  ] EFER   = 0x00000000
+00904151000i[CPU0  ] | EAX=0000003f  EBX=00103004  ECX=00000002  EDX=00000064
+00904151000i[CPU0  ] | ESP=00104f70  EBP=00104f88  ESI=00000000  EDI=00000000
+00904151000i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf SF zf AF pf CF
+00904151000i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00904151000i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
+00904151000i[CPU0  ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00904151000i[CPU0  ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00904151000i[CPU0  ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00904151000i[CPU0  ] |  FS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00904151000i[CPU0  ] |  GS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00904151000i[CPU0  ] | EIP=00101286 (00101286)
+00904151000i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
+00904151000i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
+00904151000i[CMOS  ] Last time is 1692607162 (Mon Aug 21 11:39:22 2023)
+00904151000i[SIM   ] quit_sim called with exit code 1

@@ -1,4 +1,4 @@
-OBJECTS = loader.o main.o io.o frame_buffer.o serial_port.o gdt_asm.o gdt.o isr_asm.o idt.o isr.o idt_asm.o keyboard.o
+OBJECTS = loader.o main.o io.o frame_buffer.o serial_port.o gdt_asm.o gdt.o isr_asm.o idt.o isr.o idt_asm.o keyboard.o user_interface.o
 CC = gcc
 CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
 LDFLAGS = -T link.ld -melf_i386
