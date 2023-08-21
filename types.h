@@ -4,11 +4,11 @@
 /* Typedefs, to standardise sizes across platforms.
  * These typedefs are written for 32-bit X86.
  */
-typedef unsigned int u32int;
-typedef int s32int;
-typedef unsigned short u16int;
-typedef short s16int;
-typedef unsigned char u8int;
-typedef char s8int;
+typedef unsigned int uint32;
+typedef int sint32;
+typedef unsigned short uint16;
+typedef short sint16;
+typedef unsigned char uint8;
+typedef char sint8;
 
 #endif /* INCLUDE_TYPES_H */

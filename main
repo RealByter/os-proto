@@ -1,0 +1,357 @@
+# 0 "/home/ofir/Desktop/os-proto/main.c"
+# 1 "/home/ofir/Desktop/os-proto//"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 0 "<command-line>" 2
+# 1 "/home/ofir/Desktop/os-proto/main.c"
+# 1 "/home/ofir/Desktop/os-proto/frame_buffer.h" 1
+
+
+
+       
+# 1 "/home/ofir/Desktop/os-proto/io.h" 1
+# 10 "/home/ofir/Desktop/os-proto/io.h"
+void outb(unsigned short port, unsigned char data);
+
+
+
+
+
+
+unsigned char inb(unsigned short port);
+# 6 "/home/ofir/Desktop/os-proto/frame_buffer.h" 2
+# 1 "/home/ofir/Desktop/os-proto/serial_port.h" 1
+
+
+
+       
+# 16 "/home/ofir/Desktop/os-proto/serial_port.h"
+enum BaudRate { Baud_115200 = 1, Baud_57600, Baud_19200, Baud_9600 };
+
+
+
+
+void serial_configure_baud_rate(unsigned short com, unsigned short divisor);
+void serial_configure_line(unsigned short com);
+void serial_configure_fifo_buffer(unsigned short com);
+void serial_configure_modem(unsigned short com);
+int serial_is_transmit_fifo_empty(unsigned short com);
+int serial_write(unsigned short com, char *buf, unsigned int len);
+void serial_write_byte(unsigned short port, char byteData);
+void serial_configure(unsigned short port, unsigned short baudRate);
+# 7 "/home/ofir/Desktop/os-proto/frame_buffer.h" 2
+# 1 "/home/ofir/Desktop/os-proto/string.h" 1
+
+
+
+char* int_to_string(int num, char* str, int base);
+void reverse_string(char str[], int length);
+# 8 "/home/ofir/Desktop/os-proto/frame_buffer.h" 2
+# 26 "/home/ofir/Desktop/os-proto/frame_buffer.h"
+void outb(unsigned short port, unsigned char data);
+void fb_move_cursor(unsigned short pos);
+void clear_screen();
+void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg);
+void fb_write(char *buf, unsigned int len);
+void fb_write_char(char character);
+# 2 "/home/ofir/Desktop/os-proto/main.c" 2
+
+# 1 "/home/ofir/Desktop/os-proto/gdt.h" 1
+
+
+
+       
+# 1 "/home/ofir/Desktop/os-proto/types.h" 1
+
+
+
+
+
+
+typedef unsigned int uint32;
+typedef int sint32;
+typedef unsigned short uint16;
+typedef short sint16;
+typedef unsigned char uint8;
+typedef char sint8;
+# 6 "/home/ofir/Desktop/os-proto/gdt.h" 2
+
+
+
+
+
+struct gdt_entry_struct {
+  u16int limit_low;
+  u16int base_low;
+  u8int base_middle;
+  u8int
+      access;
+  u8int granularity;
+  u8int base_high;
+} __attribute__((packed));
+
+typedef struct gdt_entry_struct gdt_entry_t;
+
+
+
+
+
+struct gdt_ptr_struct {
+  u16int limit;
+  u32int base;
+} __attribute__((packed));
+
+typedef struct gdt_ptr_struct gdt_ptr_t;
+
+
+void init_gdt();
+# 4 "/home/ofir/Desktop/os-proto/main.c" 2
+# 1 "/home/ofir/Desktop/os-proto/idt.h" 1
+
+
+
+       
+# 40 "/home/ofir/Desktop/os-proto/idt.h"
+extern void isr0();
+extern void isr1();
+extern void isr2();
+extern void isr3();
+extern void isr4();
+extern void isr5();
+extern void isr6();
+extern void isr7();
+extern void isr8();
+extern void isr9();
+extern void isr10();
+extern void isr11();
+extern void isr12();
+extern void isr13();
+extern void isr14();
+extern void isr15();
+extern void isr16();
+extern void isr17();
+extern void isr18();
+extern void isr19();
+extern void isr20();
+extern void isr21();
+extern void isr22();
+extern void isr23();
+extern void isr24();
+extern void isr25();
+extern void isr26();
+extern void isr27();
+extern void isr28();
+extern void isr29();
+extern void isr30();
+extern void isr31();
+# 124 "/home/ofir/Desktop/os-proto/idt.h"
+extern void irq0();
+extern void irq1();
+extern void irq2();
+extern void irq3();
+extern void irq4();
+extern void irq5();
+extern void irq6();
+extern void irq7();
+extern void irq8();
+extern void irq9();
+extern void irq10();
+extern void irq11();
+extern void irq12();
+extern void irq13();
+extern void irq14();
+extern void irq15();
+
+
+
+
+
+struct idt_entry_struct {
+  u16int offset_low;
+  u16int segment_selector;
+  u8int alwaysZero;
+  u8int access_gran;
+  u16int offset_high;
+} __attribute__((packed));
+
+typedef struct idt_entry_struct idt_entry_t;
+
+
+
+
+
+struct idt_ptr_struct {
+  u16int limit;
+  u32int base;
+} __attribute__((packed));
+
+typedef struct idt_ptr_struct idt_ptr_t;
+
+
+void init_idt();
+# 5 "/home/ofir/Desktop/os-proto/main.c" 2
+# 1 "/home/ofir/Desktop/os-proto/keyboard.h" 1
+
+
+
+
+
+unsigned char keyboard_read_scan_code(void);
+unsigned char keyboard_scan_code_to_ascii(unsigned char);
+# 6 "/home/ofir/Desktop/os-proto/main.c" 2
+# 1 "/home/ofir/Desktop/os-proto/user_interface.h" 1
+
+
+
+       
+
+
+
+void user_input(char* buf, unsigned int max_length);
+# 7 "/home/ofir/Desktop/os-proto/main.c" 2
+# 1 "/home/ofir/Desktop/os-proto/isr.h" 1
+
+
+
+       
+# 17 "/home/ofir/Desktop/os-proto/isr.h"
+typedef struct cpu_state
+{
+  u32int edi;
+  u32int esi;
+  u32int ebp;
+  u32int esp;
+  u32int ebx;
+  u32int edx;
+  u32int ecx;
+  u32int eax;
+} cpu_state_t;
+
+typedef struct stack_state
+{
+  u32int int_no;
+  u32int err_code;
+  u32int eip;
+  u32int cs;
+  u32int eflags;
+  u32int useresp;
+  u32int ss;
+} stack_state_t;
+
+typedef struct registers
+{
+
+  u32int ds;
+
+  cpu_state_t cpu_registers;
+
+
+
+  stack_state_t stack_contents;
+} registers_t;
+
+typedef void (*isr_t)(registers_t);
+
+void register_interrupt_handler(u8int n, isr_t handler);
+void pic_acknowledge(unsigned int interrupt);
+void interrupt_handler(registers_t regs);
+# 8 "/home/ofir/Desktop/os-proto/main.c" 2
+# 25 "/home/ofir/Desktop/os-proto/main.c"
+static uint8 ide_read_register(uint8 channel, uint8 reg);
+static void ide_write_register(uint8 channel, uint8 reg, uint8 data);
+
+typedef struct {
+    uint16 base;
+    uint16 control;
+    uint16 bm_ide;
+    uint16 no_intr;
+} IDE_CHANNELS;
+
+IDE_CHANNELS g_ide_channels[2];
+
+
+
+
+uint8 inportb(uint16 port) {
+    uint8 ret;
+    asm volatile("inb %1, %0" : "=a"(ret) : "Nd"(port));
+    return ret;
+}
+
+
+
+
+void outportb(uint16 port, uint8 val) {
+    asm volatile("outb %1, %0" :: "dN"(port), "a"(val));
+}
+
+
+static uint8 ide_read_register(uint8 channel, uint8 reg) {
+    uint8 ret;
+
+
+    if (reg > 0x07 && reg < 0x0C)
+        ide_write_register(channel, 0x0C, 0x80 | g_ide_channels[channel].no_intr);
+
+
+    if (reg < 0x08)
+        ret = inportb(g_ide_channels[channel].base + reg - 0x00);
+    else if (reg < 0x0C)
+        ret = inportb(g_ide_channels[channel].base + reg - 0x06);
+    else if (reg < 0x0E)
+        ret = inportb(g_ide_channels[channel].control + reg - 0x0A);
+    else if (reg < 0x16)
+        ret = inportb(g_ide_channels[channel].bm_ide + reg - 0x0E);
+
+
+    if (reg > 0x07 && reg < 0x0C)
+        ide_write_register(channel, 0x0C, g_ide_channels[channel].no_intr);
+
+    return ret;
+}
+
+
+static void ide_write_register(uint8 channel, uint8 reg, uint8 data) {
+
+    if (reg > 0x07 && reg < 0x0C)
+        ide_write_register(channel, 0x0C, 0x80 | g_ide_channels[channel].no_intr);
+
+
+    if (reg < 0x08)
+        outportb(g_ide_channels[channel].base + reg - 0x00, data);
+    else if (reg < 0x0C)
+        outportb(g_ide_channels[channel].base + reg - 0x06, data);
+    else if (reg < 0x0E)
+        outportb(g_ide_channels[channel].control + reg - 0x0A, data);
+    else if (reg < 0x16)
+        outportb(g_ide_channels[channel].bm_ide + reg - 0x0E, data);
+
+
+    if (reg > 0x07 && reg < 0x0C)
+        ide_write_register(channel, 0x0C, g_ide_channels[channel].no_intr);
+}
+
+
+int main()
+{
+  init_gdt();
+  init_idt();
+  serial_configure(0x3F8, Baud_115200);
+  serial_write(0x3F8, "something", 9);
+  clear_screen();
+
+  uint8 data = 'a';
+  uint8 reg = 0x00;
+  uint8 channel = 0x00;
+
+  ide_write_register(channel, reg, data);
+  uint8 res = ide_read_register(channel, reg);
+
+  fb_write_char(res);
+
+
+
+
+  return 0;
+}
