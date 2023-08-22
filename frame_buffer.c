@@ -7,6 +7,8 @@ static int cursor = 0;
 
 void fb_move_cursor(unsigned short pos)
 {
+  if(pos > FRAME_BUFFER_SIZE)
+    pos = FRAME_BUFFER_SIZE - 1;
   outb(FB_COMMAND_PORT, FB_HIGH_BYTE_COMMAND);
   outb(FB_DATA_PORT, ((pos >> 8) & 0x00FF));
   outb(FB_COMMAND_PORT, FB_LOW_BYTE_COMMAND);
