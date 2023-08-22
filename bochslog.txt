@@ -36,53 +36,53 @@
 00000000000i[      ]   VGA extension support: vbe cirrus voodoo
 00000000000i[IMG   ] Disk image modules
 00000000000i[IMG   ]   flat concat sparse dll growing undoable volatile vbox
-00000000000i[IMG   ]   vmware4 vvfat vpc vmware3
+00000000000i[IMG   ]   vmware3 vvfat vpc vmware4
 00000000000i[NETCTL] Networking modules
-00000000000i[NETCTL]   null vnet vde socket slirp tuntap linux
+00000000000i[NETCTL]   null slirp linux tuntap vnet socket vde
 00000000000i[SNDCTL] Sound drivers
-00000000000i[SNDCTL]   dummy file sdl alsa oss
+00000000000i[SNDCTL]   dummy oss file alsa sdl
 00000000000i[USBCTL] Pluggable USB devices
-00000000000i[USBCTL]   hub disk cdrom floppy mouse tablet keypad keyboard
-00000000000i[USBCTL]   printer
-00000000000i[MEM0  ] allocated memory at 0x7f37d1218010. after alignment, vector=0x7f37d1219000
+00000000000i[USBCTL]   printer disk cdrom floppy hub mouse tablet keypad
+00000000000i[USBCTL]   keyboard
+00000000000i[MEM0  ] allocated memory at 0x7f0116f40010. after alignment, vector=0x7f0116f41000
 00000000000i[MEM0  ] 32.00MB
 00000000000i[MEM0  ] mem block size = 0x00020000, blocks=256
 00000000000i[MEM0  ] rom at 0xffff0000/65536 ('/usr/share/bochs/BIOS-bochs-legacy')
 00000000000i[CPU0  ] WARNING: 3DNow! is not implemented yet !
 00000000000i[DEV   ] will paste characters every 100 iodev timer ticks
-00000000000i[      ] lt_dlhandle is 0x5626cb57bde0
+00000000000i[      ] lt_dlhandle is 0x55c1a80cff70
 00000000000i[PLUGIN] loaded plugin libbx_soundalsa.so
 00000000000i[WAVOUT] ALSA: opened default PCM output device
 00000000000i[WAVOUT] changed sample rate to 44101
-00000000000i[      ] lt_dlhandle is 0x5626cb551440
+00000000000i[      ] lt_dlhandle is 0x55c1a80fbbc0
 00000000000i[PLUGIN] loaded plugin libbx_pci.so
-00000000000i[      ] lt_dlhandle is 0x5626cbcfdec0
+00000000000i[      ] lt_dlhandle is 0x55c1a80f0d70
 00000000000i[PLUGIN] loaded plugin libbx_pci2isa.so
-00000000000i[      ] lt_dlhandle is 0x5626cbcfe930
+00000000000i[      ] lt_dlhandle is 0x55c1a887eb30
 00000000000i[PLUGIN] loaded plugin libbx_usb_uhci.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd00bd0
+00000000000i[      ] lt_dlhandle is 0x55c1a8880dd0
 00000000000i[PLUGIN] loaded plugin libbx_acpi.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd01400
+00000000000i[      ] lt_dlhandle is 0x55c1a8881600
 00000000000i[PLUGIN] loaded plugin libbx_hpet.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd02280
+00000000000i[      ] lt_dlhandle is 0x55c1a8882480
 00000000000i[PLUGIN] loaded plugin libbx_cmos.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd02a90
+00000000000i[      ] lt_dlhandle is 0x55c1a8882c90
 00000000000i[PLUGIN] loaded plugin libbx_dma.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd03400
+00000000000i[      ] lt_dlhandle is 0x55c1a8883600
 00000000000i[PLUGIN] loaded plugin libbx_pic.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd03bc0
+00000000000i[      ] lt_dlhandle is 0x55c1a8883dc0
 00000000000i[PLUGIN] loaded plugin libbx_pit.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd045e0
+00000000000i[      ] lt_dlhandle is 0x55c1a88847e0
 00000000000i[PLUGIN] loaded plugin libbx_vga.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd25c20
+00000000000i[      ] lt_dlhandle is 0x55c1a88a5e20
 00000000000i[PLUGIN] loaded plugin libbx_floppy.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd267d0
+00000000000i[      ] lt_dlhandle is 0x55c1a88a69d0
 00000000000i[PLUGIN] loaded plugin libbx_ioapic.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd26fe0
+00000000000i[      ] lt_dlhandle is 0x55c1a88a71e0
 00000000000i[PLUGIN] loaded plugin libbx_keyboard.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd278e0
+00000000000i[      ] lt_dlhandle is 0x55c1a88a7ae0
 00000000000i[PLUGIN] loaded plugin libbx_harddrv.so
-00000000000i[      ] lt_dlhandle is 0x5626cbd2aba0
+00000000000i[      ] lt_dlhandle is 0x55c1a88aada0
 00000000000i[PLUGIN] loaded plugin libbx_pci_ide.so
 00000000000i[PLUGIN] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV   ] i440FX PMC present at device 0, function 0
@@ -90,7 +90,7 @@
 00000000000i[DEV   ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[PLUGIN] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS  ] Using local time for initial clock
-00000000000i[CMOS  ] Setting initial clock to: Mon Aug 21 11:24:18 2023 (time0=1692606258)
+00000000000i[CMOS  ] Setting initial clock to: Mon Aug 21 18:18:08 2023 (time0=1692631088)
 00000000000i[PLUGIN] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA   ] channel 4 used by cascade
 00000000000i[PLUGIN] init_dev of 'pic' plugin device by virtual method
@@ -122,20 +122,20 @@
 00000000000i[CD1   ] load cdrom with path='os.iso'
 00000000000i[CD1   ] Opening image file as a cd.
 00000000000i[HD    ] Media present in CD-ROM drive
-00000000000i[HD    ] Capacity is 2487 sectors (4.86 MB)
+00000000000i[HD    ] Capacity is 2484 sectors (4.85 MB)
 00000000000i[PLUGIN] init_dev of 'pci_ide' plugin device by virtual method
 00000000000i[DEV   ] PIIX3 PCI IDE controller present at device 1, function 1
-00000000000i[PLUGIN] init_dev of 'gameport' plugin device by virtual method
-00000000000i[PLUGIN] init_dev of 'iodebug' plugin device by virtual method
 00000000000i[PLUGIN] init_dev of 'parallel' plugin device by virtual method
 00000000000i[PAR   ] parallel port 1 at 0x0378 irq 7
-00000000000i[PLUGIN] init_dev of 'serial' plugin device by virtual method
-00000000000i[SER   ] com1 at 0x03f8 irq 4 (mode: file)
-00000000000i[PLUGIN] init_dev of 'biosdev' plugin device by virtual method
+00000000000i[PLUGIN] init_dev of 'iodebug' plugin device by virtual method
 00000000000i[PLUGIN] init_dev of 'unmapped' plugin device by virtual method
-00000000000i[PLUGIN] init_dev of 'extfpuirq' plugin device by virtual method
 00000000000i[PLUGIN] init_dev of 'speaker' plugin device by virtual method
 00000000000i[PCSPK ] Using lowlevel sound support for output
+00000000000i[PLUGIN] init_dev of 'biosdev' plugin device by virtual method
+00000000000i[PLUGIN] init_dev of 'serial' plugin device by virtual method
+00000000000i[SER   ] com1 at 0x03f8 irq 4 (mode: file)
+00000000000i[PLUGIN] init_dev of 'extfpuirq' plugin device by virtual method
+00000000000i[PLUGIN] init_dev of 'gameport' plugin device by virtual method
 00000000000i[PLUGIN] init_dev of 'usb_uhci' plugin device by virtual method
 00000000000i[DEV   ] USB UHCI present at device 1, function 2
 00000000000i[UHCI  ] USB UHCI initialized
@@ -147,14 +147,14 @@
 00000000000i[PLUGIN] register state of 'pit' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'vga' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'floppy' plugin device by virtual method
-00000000000i[PLUGIN] register state of 'gameport' plugin device by virtual method
-00000000000i[PLUGIN] register state of 'iodebug' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'parallel' plugin device by virtual method
-00000000000i[PLUGIN] register state of 'serial' plugin device by virtual method
-00000000000i[PLUGIN] register state of 'biosdev' plugin device by virtual method
+00000000000i[PLUGIN] register state of 'iodebug' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'unmapped' plugin device by virtual method
-00000000000i[PLUGIN] register state of 'extfpuirq' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'speaker' plugin device by virtual method
+00000000000i[PLUGIN] register state of 'biosdev' plugin device by virtual method
+00000000000i[PLUGIN] register state of 'serial' plugin device by virtual method
+00000000000i[PLUGIN] register state of 'extfpuirq' plugin device by virtual method
+00000000000i[PLUGIN] register state of 'gameport' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'usb_uhci' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'acpi' plugin device by virtual method
 00000000000i[PLUGIN] register state of 'hpet' plugin device by virtual method
@@ -223,51 +223,50 @@
 00000000000i[PLUGIN] reset of 'keyboard' plugin device by virtual method
 00000000000i[PLUGIN] reset of 'harddrv' plugin device by virtual method
 00000000000i[PLUGIN] reset of 'pci_ide' plugin device by virtual method
-00000000000i[PLUGIN] reset of 'gameport' plugin device by virtual method
-00000000000i[PLUGIN] reset of 'iodebug' plugin device by virtual method
 00000000000i[PLUGIN] reset of 'parallel' plugin device by virtual method
-00000000000i[PLUGIN] reset of 'serial' plugin device by virtual method
-00000000000i[PLUGIN] reset of 'biosdev' plugin device by virtual method
+00000000000i[PLUGIN] reset of 'iodebug' plugin device by virtual method
 00000000000i[PLUGIN] reset of 'unmapped' plugin device by virtual method
-00000000000i[PLUGIN] reset of 'extfpuirq' plugin device by virtual method
 00000000000i[PLUGIN] reset of 'speaker' plugin device by virtual method
+00000000000i[PLUGIN] reset of 'biosdev' plugin device by virtual method
+00000000000i[PLUGIN] reset of 'serial' plugin device by virtual method
+00000000000i[PLUGIN] reset of 'extfpuirq' plugin device by virtual method
+00000000000i[PLUGIN] reset of 'gameport' plugin device by virtual method
 00000000000i[PLUGIN] reset of 'usb_uhci' plugin device by virtual method
 00000000000i[      ] set SIGINT handler to bx_debug_ctrlc_handler
 00000004662i[BIOS  ] $Revision: 14314 $ $Date: 2021-07-14 18:10:19 +0200 (Mi, 14. Jul 2021) $
-00000317288i[KBD   ] reset-disable command received
-00000318445i[PIDE  ] BAR #4: i/o base address = 0xc000
-00000318672i[UHCI  ] BAR #4: i/o base address = 0xc100
-00000324507i[P2ISA ] PCI IRQ routing: PIRQD# set to 0x0b
-00000324523i[P2ISA ] write: ELCR2 = 0x08
-00000324543i[UHCI  ] new IRQ line = 11
-00000324608i[P2ISA ] PCI IRQ routing: PIRQA# set to 0x0a
-00000324624i[P2ISA ] write: ELCR2 = 0x0c
-00000324644i[ACPI  ] new IRQ line = 10
-00000442944i[VBIOS ] VGABios $Id: vgabios.c 288 2021-05-28 19:05:28Z vruppert $
-00000443015i[BXVGA ] VBE known Display Interface b0c0
-00000443047i[BXVGA ] VBE known Display Interface b0c5
-00000445690i[VBIOS ] VBE Bios $Id: vbe.c 292 2021-06-03 12:24:22Z vruppert $
-00004097998i[BIOS  ] IDE time out
-00594824299i[BIOS  ] Booting from 07c0:0000
-00604224466e[WAVOUT] ALSA: underrun occurred
-00658547115i[SER   ] com1: FIFO enabled
-00904151000p[SDL2  ] >>PANIC<< POWER button turned off.
-00904151000i[CPU0  ] CPU is in protected mode (active)
-00904151000i[CPU0  ] CS.mode = 32 bit
-00904151000i[CPU0  ] SS.mode = 32 bit
-00904151000i[CPU0  ] EFER   = 0x00000000
-00904151000i[CPU0  ] | EAX=0000003f  EBX=00103004  ECX=00000002  EDX=00000064
-00904151000i[CPU0  ] | ESP=00104f70  EBP=00104f88  ESI=00000000  EDI=00000000
-00904151000i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf SF zf AF pf CF
-00904151000i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00904151000i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
-00904151000i[CPU0  ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00904151000i[CPU0  ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00904151000i[CPU0  ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00904151000i[CPU0  ] |  FS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00904151000i[CPU0  ] |  GS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-00904151000i[CPU0  ] | EIP=00101286 (00101286)
-00904151000i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
-00904151000i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
-00904151000i[CMOS  ] Last time is 1692607162 (Mon Aug 21 11:39:22 2023)
-00904151000i[SIM   ] quit_sim called with exit code 1
+00000317812i[KBD   ] reset-disable command received
+00000318931i[PIDE  ] BAR #4: i/o base address = 0xc000
+00000319158i[UHCI  ] BAR #4: i/o base address = 0xc100
+00000324993i[P2ISA ] PCI IRQ routing: PIRQD# set to 0x0b
+00000325009i[P2ISA ] write: ELCR2 = 0x08
+00000325029i[UHCI  ] new IRQ line = 11
+00000325094i[P2ISA ] PCI IRQ routing: PIRQA# set to 0x0a
+00000325110i[P2ISA ] write: ELCR2 = 0x0c
+00000325130i[ACPI  ] new IRQ line = 10
+00000443430i[VBIOS ] VGABios $Id: vgabios.c 288 2021-05-28 19:05:28Z vruppert $
+00000443501i[BXVGA ] VBE known Display Interface b0c0
+00000443533i[BXVGA ] VBE known Display Interface b0c5
+00000446176i[VBIOS ] VBE Bios $Id: vbe.c 292 2021-06-03 12:24:22Z vruppert $
+00004098461i[BIOS  ] IDE time out
+00630399532i[BIOS  ] Booting from 07c0:0000
+00705837989i[SER   ] com1: FIFO enabled
+09523056000p[SDL2  ] >>PANIC<< POWER button turned off.
+09523056000i[CPU0  ] CPU is in protected mode (active)
+09523056000i[CPU0  ] CS.mode = 32 bit
+09523056000i[CPU0  ] SS.mode = 32 bit
+09523056000i[CPU0  ] EFER   = 0x00000000
+09523056000i[CPU0  ] | EAX=00000000  EBX=00010000  ECX=00105000  EDX=00104fa0
+09523056000i[CPU0  ] | ESP=00105000  EBP=00000000  ESI=00000000  EDI=00000000
+09523056000i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af PF cf
+09523056000i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
+09523056000i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
+09523056000i[CPU0  ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+09523056000i[CPU0  ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+09523056000i[CPU0  ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+09523056000i[CPU0  ] |  FS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+09523056000i[CPU0  ] |  GS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+09523056000i[CPU0  ] | EIP=0010001b (0010001b)
+09523056000i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
+09523056000i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
+09523056000i[CMOS  ] Last time is 1692640611 (Mon Aug 21 20:56:51 2023)
+09523056000i[SIM   ] quit_sim called with exit code 1

@@ -51,6 +51,39 @@ void fb_write_char(char character)
   else 
   {
     cursor = ((unsigned int)(cursor / 80) + 1) * 80;
+    char buf[MAX_INT_SIZE];
+    uint_to_str(buf, cursor);
+    serial_write(SERIAL_COM1_BASE, buf, MAX_INT_SIZE);
+    serial_write(SERIAL_COM1_BASE, "\n", 1);
+    if(cursor > FRAME_BUFFER_SIZE)
+    {
+      serial_write(SERIAL_COM1_BASE, "enter clear\n", 12);
+      clear_screen();
+      cursor = 0;
+    }
+    else 
+    {
+      serial_write(SERIAL_COM1_BASE, buf, MAX_INT_SIZE);
+      serial_write(SERIAL_COM1_BASE, "no enter clear\n", 15);
+    }
     fb_move_cursor(cursor); // a length of a vga line is 80 
+  }
+}
+
+void uint_to_str(char* buf, unsigned int number)
+{
+  char rev[MAX_INT_SIZE];
+
+  int i = 0;
+  while(number > 1)
+  {
+    rev[i] = (number % 10) + NUM_TO_ASCII;
+    number /= 10;
+    i++;
+  }
+
+  for(int j = 0; j < i; j++)
+  {
+    buf[j] = rev[i - 1 - j];
   }
 }
