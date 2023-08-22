@@ -30,7 +30,7 @@ int serial_is_transmit_fifo_empty(unsigned short com)
 int serial_write(unsigned short com, char *buf, unsigned int len)
 {
   unsigned int indexToBuffer = 0;
-  while (indexToBuffer < len)
+  while (indexToBuffer < len && buf[indexToBuffer] != '\0')
   {
     if (serial_is_transmit_fifo_empty(com))
     {

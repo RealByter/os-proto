@@ -4,6 +4,7 @@
 #pragma once
 #include "io.h"
 #include "serial_port.h"
+#include "string.h"
 
 
 #define FB_COMMAND_PORT 0x3D4
@@ -28,6 +29,5 @@ void clear_screen();
 void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg);
 void fb_write(char *buf, unsigned int len);
 void fb_write_char(char character);
-void uint_to_str(char* buf, unsigned int number);
 
 #endif 
