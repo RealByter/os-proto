@@ -2,6 +2,7 @@
   "files.associations": {
     "string.h": "c",
     "frame_buffer.h": "c",
-    "serial_port.h": "c"
+    "serial_port.h": "c",
+    "ide.h": "c"
   }
 }
