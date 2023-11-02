@@ -12,7 +12,8 @@ os.iso: kernel.elf
 	grub-mkrescue -o os.iso iso
 
 run: os.iso
-	bochs -f bochsrc.txt -q
+	# bochs -f bochsrc.txt -q
+	qemu-system-x86_64 -boot d -cdrom os.iso -m 512 -drive format=raw,file=disk.img
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
 %.o: %.s

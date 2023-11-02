@@ -30,9 +30,10 @@ int main()
   ata_init();
   // ide_init(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
   char* write = "something";
-  ide_write_sectors(1, 1, 0, (uint32)write);
-  char read[10];
-  ide_read_sectors(1, 1, 0, (uint32)read);
+  ide_write_sectors(0, 10, 0, (uint32)write);
+  // ide_write_sectors(1, 10, 0, (uint32)write);
+  // char read[10];
+  // ide_read_sectors(1, 1, 0, (uint32)read);
   
   
   // uint8 data = 'a';
@@ -44,8 +45,8 @@ int main()
 
   // fb_write_char(res);
 
-  //char buf[BUFFER_LEN];
-  //user_input(buf, BUFFER_LEN);
-  //fb_write(buf, BUFFER_LEN);
+  char buf[BUFFER_LEN];
+  user_input(buf, BUFFER_LEN);
+  fb_write(buf, BUFFER_LEN);
   return 0;
 }
