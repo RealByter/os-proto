@@ -22,6 +22,6 @@ int init(void* startAddr, void* endAddr);
 void *brk(int size);
 void* malloc(unsigned int sizeInBytes);
 void free(void* addr);
-void heapPrintBlocks();
+// void heapPrintBlocks();
 
 #endif /* INCLUDE_HEAP_H */

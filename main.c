@@ -6,6 +6,7 @@
 #include "user_interface.h"
 #include "isr.h"
 #include "ide.h"
+#include "heap.h"
 
 /* The I/O ports */
 #define FB_COMMAND_PORT 0x3D4
@@ -28,9 +29,11 @@ int main()
   serial_write(SERIAL_COM1_BASE, "something", 9);
   clear_screen();
   ata_init();
+  init((void*)0x00101000, (void*)0x00102000);
+  char* string = malloc(8);
   // ide_init(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
-  char* write = "something";
-  ide_write_sectors(0, 10, 0, (uint32)write);
+  // char* write = "something";
+  // ide_write_sectors(0, 10, 0, (uint32)write);
   // ide_write_sectors(1, 10, 0, (uint32)write);
   // char read[10];
   // ide_read_sectors(1, 1, 0, (uint32)read);

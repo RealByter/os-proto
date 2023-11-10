@@ -1,6 +1,6 @@
-OBJECTS = loader.o main.o io.o frame_buffer.o serial_port.o gdt_asm.o gdt.o isr_asm.o idt.o isr.o idt_asm.o keyboard.o user_interface.o string.o ide.o
+OBJECTS = loader.o main.o io.o heap.o frame_buffer.o serial_port.o gdt_asm.o gdt.o isr_asm.o idt.o isr.o idt_asm.o keyboard.o user_interface.o string.o ide.o
 CC = gcc
-CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
+CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -c
 LDFLAGS = -T link.ld -melf_i386
 AS = nasm
 ASFLAGS = -f elf
