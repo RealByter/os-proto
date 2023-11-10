@@ -49,7 +49,7 @@ typedef struct registers
   stack_state_t stack_contents;
 } registers_t;
 
-typedef void (*isr_t)(registers_t);
+typedef cpu_state_t (*isr_t)(registers_t);
 
 void register_interrupt_handler(uint8 n, isr_t handler);
 void pic_acknowledge(unsigned int interrupt);

@@ -167,3 +167,22 @@ typedef struct idt_ptr_struct idt_ptr_t;
 void init_idt();
 
 #endif /* INCLUDE_IDT_H */
+
+// #include "types.h"
+
+// struct interrupt_descriptor {
+//   uint16 address_low;
+//   uint16 selector;
+//   uint8 ist;
+//   uint8 flags;
+//   uint16 address_high;
+// } __attribute__((packed))
+
+// typedef struct interrupt_descriptor interrupt_descriptor;
+
+// struct idtr {
+//   uint16 limit;
+//   uint32 base;
+// } __attribute__((packed))
+
+// typedef struct idtr idtr;

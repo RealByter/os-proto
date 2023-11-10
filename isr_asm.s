@@ -138,3 +138,71 @@ common_interrupt_handler:                 ; the common parts of the generic
     ; pops these values off the stack and returns the processor to the state it
     ; was in originally.
     iret
+
+; extern interrupt_dispatch
+
+; %macro interrupt_handler 2
+
+; .align 16
+; global vector_%1_handler
+; vector_%1_handler:
+;   or %2 %2
+;   jnz skip
+;   pushq 0
+;   skip:
+;   pushq %1
+;   jmp interrupt_stub
+
+; %endmacro
+
+; interrupt_handler 0, 0
+; interrupt_handler 1, 0
+; interrupt_handler 2, 0
+; interrupt_handler 3, 0
+; interrupt_handler 4, 0
+; interrupt_handler 5, 0
+; interrupt_handler 6, 0
+; interrupt_handler 7, 0
+; interrupt_handler 8, 1
+; interrupt_handler 9, 0
+; interrupt_handler 10, 1
+; interrupt_handler 11, 1
+; interrupt_handler 12, 1
+; interrupt_handler 13, 1
+; interrupt_handler 14, 1
+; interrupt_handler 15, 0
+; interrupt_handler 16, 0
+; interrupt_handler 17, 0
+; interrupt_handler 18, 0
+; interrupt_handler 19, 0
+; interrupt_handler 20, 0
+; interrupt_handler 21, 0
+; interrupt_handler 22, 0
+; interrupt_handler 23, 0
+; interrupt_handler 24, 0
+; interrupt_handler 25, 0
+; interrupt_handler 26, 0
+; interrupt_handler 27, 0
+; interrupt_handler 28, 0
+; interrupt_handler 29, 0
+; interrupt_handler 30, 0
+; interrupt_handler 31, 0
+
+; interrupt_stub:
+;   pusha
+;   pushf
+;   push ds
+;   push es
+;   push fs
+;   push gs
+
+;   call interrupt_dispatch
+
+;   pop gs
+;   pop fs
+;   pop es
+;   pop ds
+;   popf
+;   popa
+
+;   add sp, 16

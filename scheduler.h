@@ -11,4 +11,4 @@ typedef struct {
   
 } process;
 
-void schedule();
+void init_scheduler();

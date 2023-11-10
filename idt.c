@@ -96,3 +96,35 @@ void init_idt()
 
   idt_flush((uint32)&idt_ptr);
 }
+
+// void set_idt_entry(uint8 vector, void* handler, uint8 dpl)
+// {
+//   uint32 handler_addr = (uint32)handler;
+
+//   interrupt_descriptor* entry = &idt[vector];
+//   entry->address_low = handler_addr & 0xFFFF;
+//   entry->address_high = (handler_addr >> 16) & 0xFFFF;
+//   entry->selector = 0x08;
+//   entry->flags = 0b1110 | ((dpl & 0b11) << 5) | (1 << 7);
+//   entry->ist = 0;
+//   //   idt_entries[num].offset_low = (addressISR & 0xFFFF);
+// //   idt_entries[num].segment_selector = segmentSelector;
+// //   idt_entries[num].alwaysZero = 0;
+
+// //   idt_entries[num].access_gran = accessGran;
+
+// //   idt_entries[num].offset_high = addressISR >> 16;
+// }
+
+// extern char vector_0_handler[];
+
+// void load_idt() 
+// {
+//   for(uint16 i = 0; i < 256; i++)
+//     set_idt_entry(i, (uint32)vector_0_handler + (i * 16), 0);
+
+//   idtr idt_reg;
+//   idt_reg.limit = 0xFFF;
+//   idt_reg.base = (uint32)idt;
+//   idt_flush((uint32)&idt_reg);
+// }
