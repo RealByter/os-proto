@@ -7,6 +7,7 @@
 #include "isr.h"
 #include "ide.h"
 #include "heap.h"
+#include "timer.h"
 
 /* The I/O ports */
 #define FB_COMMAND_PORT 0x3D4
@@ -30,18 +31,21 @@ int main()
   clear_screen();
   ata_init();
   init((void*)0x00101000, (void*)0x00102000);
-  char* string = malloc(6);
-  string[0] = 'h';
-  string[1] = 'e';
-  string[2] = 'l';
-  string[3] = 'l';
-  string[4] = 'o';
-  string[5] = 0;
-  fb_write(string, 5);
-  // ide_init(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
-  // char* write = "something";
-  // ide_write_sectors(0, 10, 0, (uint32)write);
-  // ide_write_sectors(1, 10, 0, (uint32)write);
+  // init_timer(50);
+  // asm volatile ("int $33");
+  char string = 'h';
+  // *string = 'h';
+  // *(string+1) = 'e';
+  // *(string+2) = 'e';
+  // *(string+3) = 'e';
+  // *(string+4) = 'e';
+  // string[1] = 'e';
+  // string[2] = 'l';
+  // string[3] = 'l';
+  // string[4] = 'o';
+  // fb_write(string, 5);
+  ide_write_sectors(0, 1, 10, (&string));
+  // ide_write_sectors(0, 1, 0, (&string));
   // char read[10];
   // ide_read_sectors(1, 1, 0, (uint32)read);
   

@@ -112,15 +112,17 @@ common_interrupt_handler:                 ; the common parts of the generic
     mov     fs, ax
     mov     gs, ax
 
+    push esp
     ; call the C function
     call    interrupt_handler
-
+    ; pop esp
     ; restore the registers
-    pop     eax                           ; reload the original data segment
-    mov     ds, ax                        ; descriptor
-    mov     es, ax
-    mov     fs, ax
-    mov     gs, ax
+    pop esp
+    pop     ebx                           ; reload the original data segment
+    mov     ds, bx                        ; descriptor
+    mov     es, bx
+    mov     fs, bx
+    mov     gs, bx
 
     popa                                  ; Pops edi,esi,ebp...
 

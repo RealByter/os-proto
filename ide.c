@@ -559,20 +559,26 @@ int ide_write_sectors(uint8 drive, uint8 num_sectors, uint32 lba, uint32 buffer)
     fb_write("IDE ERROR: Drive not found\n", 27);
     return -1;
   }
+
   // 2: Check if inputs are valid:
-  else if (((lba + num_sectors) > g_ide_devices[drive].size) && (g_ide_devices[drive].type == IDE_ATA))
+  if ((lba + num_sectors) > g_ide_devices[drive].size && g_ide_devices[drive].type == IDE_ATA)
   {
     fb_write("IDE_ERROR: LBA address is greater than the available drive sectors\n", 67);
     return -2;
   }
-  else
+
+  // Loop to write num_sectors starting from the specified LBA
+  for (int i = 0; i < num_sectors; ++i)
   {
     uint8 err;
     if (g_ide_devices[drive].type == IDE_ATA)
-      err = ide_ata_access(ATA_WRITE, drive, lba, num_sectors, buffer);
+      err = ide_ata_access(ATA_WRITE, drive, lba + i, 1, buffer + (i * 512));  // Write one sector at a time
     // print if any error in writing
-    return ide_print_error(drive, err);
+    err = ide_print_error(drive, err);
+    if (err != 0)
+      return err;
   }
+
   return 0;
 }
 

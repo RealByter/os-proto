@@ -1,5 +1,6 @@
 #include "isr.h"
 #include "io.h"
+#include "frame_buffer.h"
 
 isr_t interrupt_handlers[256];
 
@@ -25,13 +26,18 @@ void pic_acknowledge(unsigned int interrupt)
   }
 }
 
-void interrupt_handler(registers_t regs)
+void interrupt_handler(cpu_state_t* context)
 {
-  pic_acknowledge(regs.stack_contents.int_no);
+  pic_acknowledge(context->vector_number); 
+  fb_write("here", 4);
+  char printed_vector[1];
+  printed_vector[0] = context->vector_number + 33;
+  fb_write(printed_vector, 1);
 
-  if (interrupt_handlers[regs.stack_contents.int_no] != 0)
+  if (interrupt_handlers[context->vector_number] != 0)
   {
-    isr_t handler = interrupt_handlers[regs.stack_contents.int_no];
-    handler(regs);
+    fb_write("here1", 5);
+    isr_t handler = interrupt_handlers[context->vector_number];
+    handler(context);
   }
 }
