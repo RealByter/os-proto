@@ -26,17 +26,18 @@ void pic_acknowledge(unsigned int interrupt)
   }
 }
 
-void interrupt_dispatch(cpu_state_t* context)
+void interrupt_handler(cpu_state_t* context)
 {
-  fb_write('here', 4);
-  pic_acknowledge(32);
-  // fb_write(context->vector_number + 48, 1);
-  // if (interrupt_handlers[context->vector_number] != 0)
-  // {
-  //   isr_t handler = interrupt_handlers[context->vector_number];
-  //   cpu_state_t* new_context = handler(context);
-  //   fb_write(new_context->vector_number + 48, 1);
-  //   return new_context;
-  // }
+  pic_acknowledge(context->vector_number); 
+  fb_write("here", 4);
+  char printed_vector[1];
+  printed_vector[0] = context->vector_number + 33;
+  fb_write(printed_vector, 1);
 
+  if (interrupt_handlers[context->vector_number] != 0)
+  {
+    fb_write("here1", 5);
+    isr_t handler = interrupt_handlers[context->vector_number];
+    handler(context);
+  }
 }

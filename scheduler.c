@@ -1,63 +1,49 @@
 #include "scheduler.h"
-#include "isr.h"
 #include "frame_buffer.h"
-#include "heap.h"
+#include "heap.h";
 
-process_t* head_process;
+process_t* processes_list;
 process_t* current_process;
 
-void init_first_process(cpu_state_t* state) {
-  process_t* process = malloc(sizeof(process_t));
-  process->context = state;
-  current_process = process;
-  head_process = process;
-}
+void schedule(cpu_state_t* context)
+{
+  // process_t* prempted_process;
+  // current_process->context = *context;
+  // current_process->status = READY;
 
-cpu_state_t schedule(cpu_state_t state) {
-  fb_write("scheduling", 11);
-  // if(current_process == NULL)
+  // while() 
   // {
-  //   init_first_process(state);
-  // }
-  // else 
-  // {
-  //   process_t* old_process = current_process;
-  //   current_process = current_process->next;
-  //   if(current_process == NULL)
+  //   process_t* prev_process = current_process;
+  //   if(current_process->next != NULL) 
   //   {
-  //     while(current_process == NULL)
+  //     current_process = current_process->next;
+  //   }
+  //   else 
+  //   {
+  //     current_process = processes_list;
+  //   }
+
+  //   if(current_process != NULL && current_process->STATUS == DEAD)
+  //   {
+  //     if(prev_process != NULL)
   //     {
-  //       if(head_process == DEAD)
-  //       {
-  //         process_t* dead_process = head_process;
-  //         head_process = head_process->next;
-  //         free(dead_process);
-  //       }
-  //       else
-  //       {
-  //         current_process = head_process;
-  //       }
+  //       prev_process->next = current_process->next;
   //     }
+  //     else 
+  //     {
+  //       processes_list = current_process->next;
+  //     }
+
+  //     free(current_process);
+  //   }
+  //   else 
+  //   {
+  //     current_process->status = RUNNING;
+  //     break;
   //   }
   // }
-  // return current_process->context;
-  return state;
-}
 
-void init_scheduler() 
-{
-  register_interrupt_handler(32, schedule);
-}
-
-void idle() {
-  while(1)
-    asm("hlt");
-}
-
-void process_execution_wrapper(void (*function)(void*), void* arg) {
-  function(arg);
-  current_process->status = DEAD;
-  while(1);
+  // *context = current_process->context;
 }
 
 process_t* create_process(void (*function)(void*), void* arg)
@@ -65,31 +51,10 @@ process_t* create_process(void (*function)(void*), void* arg)
   process_t* process = malloc(sizeof(process_t));
 
   process->status = READY;
-  process->context = malloc(sizeof(cpu_state_t));
-  process->context->iret_ss = current_process->context->iret_ss;
-  process->context->iret_esp = current_process->context->iret_esp;
-  process->context->iret_flags = 0x202;
-  process->context->iret_cs = current_process->context->iret_cs;
-  process->context->iret_eip = (uint32)process_execution_wrapper;
-  process->context->edi = (uint32)function;
-  process->context->esi = (uint32)arg;
-  process->context->ebp = current_process->context->ebp;
-
-  process_t* iter_process = current_process;
-  while(iter_process->next != NULL) 
-  {
-    if(iter_process->next->status == DEAD)
-    {
-      process_t* dead_process = iter_process->next;
-      iter_process->next = dead_process->next;
-      free(dead_process);
-    }
-    else
-    {
-      iter_process = iter_process->next;
-    }
-  }
-  iter_process->next = process;
-  
-  return process;
+  process->context.iret_ss = current_process->context.iret_ss;
+  process->context.iret_esp = current_process->context.esp;
+  process->context.iret_flags = 0x202;
+  process->context.iret_cs = current_process->context.iret_cs;
+  // process->context.iret_eip
+  // process->context
 }

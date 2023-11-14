@@ -16,6 +16,7 @@
 
 typedef struct cpu_state
 {
+  uint32 ds;
   uint32 edi;
   uint32 esi;
   uint32 ebp;
@@ -36,7 +37,7 @@ typedef struct cpu_state
 } cpu_state_t;
 
 
-typedef cpu_state_t (*isr_t)(cpu_state_t);
+typedef void (*isr_t)(cpu_state_t*);
 
 void register_interrupt_handler(uint8 n, isr_t handler);
 void pic_acknowledge(unsigned int interrupt);
