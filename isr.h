@@ -24,35 +24,22 @@ typedef struct cpu_state
   uint32 edx;
   uint32 ecx;
   uint32 eax;
+
+  uint32 vector_number;
+  uint32 error_code;
+
+  uint32 iret_eip;
+  uint32 iret_cs;
+  uint32 iret_flags;
+  uint32 iret_esp;
+  uint32 iret_ss;
 } cpu_state_t;
 
-typedef struct stack_state
-{
-  uint32 int_no;
-  uint32 err_code;
-  uint32 eip;
-  uint32 cs;
-  uint32 eflags;
-  uint32 useresp;
-  uint32 ss;
-} stack_state_t;
 
-typedef struct registers
-{
-  /* Data segment selector */
-  uint32 ds;
-  /* Pushed by pusha */
-  cpu_state_t cpu_registers;
-  /* Interrupt number and error code (if applicable). Pushed by the processor
-   * automatically.
-   */
-  stack_state_t stack_contents;
-} registers_t;
-
-typedef cpu_state_t (*isr_t)(registers_t);
+typedef cpu_state_t (*isr_t)(cpu_state_t);
 
 void register_interrupt_handler(uint8 n, isr_t handler);
 void pic_acknowledge(unsigned int interrupt);
-void interrupt_handler(registers_t regs);
+void interrupt_dispatch(cpu_state_t* context);
 
 #endif /* INCLUDE_ISR_H */

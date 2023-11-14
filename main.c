@@ -8,6 +8,7 @@
 #include "ide.h"
 #include "heap.h"
 #include "scheduler.h"
+#include "timer.h"
 
 /* The I/O ports */
 #define FB_COMMAND_PORT 0x3D4
@@ -22,6 +23,11 @@
 
 #define BUFFER_LEN 64
 
+void print_last() 
+{
+  fb_write("last", 4);
+}
+
 int main()
 {
   init_gdt();
@@ -30,8 +36,10 @@ int main()
   serial_write(SERIAL_COM1_BASE, "something", 9);
   clear_screen();
   ata_init();
-  init_scheduler();
+  init_timer(50);
   init((void*)0x00101000, (void*)0x00102000);
+  // create_process(print_last, 0);
+  // asm volatile ("int $32");
   char* string = malloc(6);
   string[0] = 'h';
   string[1] = 'e';
@@ -46,7 +54,7 @@ int main()
   // ide_write_sectors(1, 10, 0, (uint32)write);
   // char read[10];
   // ide_read_sectors(1, 1, 0, (uint32)read);
-  asm volatile("int $32");
+  
   
   // uint8 data = 'a';
   // uint8 reg = 0x00;
